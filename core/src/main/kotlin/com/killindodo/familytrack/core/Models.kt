@@ -19,7 +19,10 @@ data class UncleStatus(
     val lastFix: LocationFix?,
 )
 
-/** Alert types delivered to the watcher via FCM. */
+/** Where a stored fix came from (watcher-side history bookkeeping). */
+enum class FixSource { CHECK, SOS, GEOF, LOWBAT }
+
+/** Alert types delivered to the watcher as local notifications. */
 enum class AlertType {
     SOS,
     NO_ANSWER_TO_CHECK_IN,
@@ -27,11 +30,3 @@ enum class AlertType {
     GEOFENCE_ENTER,
     GEOFENCE_LEAVE,
 }
-
-/** Command written to `uncles/{id}/commands/{id}` by the watcher. */
-data class CheckInCommand(
-    val type: String = "CHECK_IN",
-    val createdAtMs: Long,
-    val answeredAtMs: Long? = null,
-    val expired: Boolean = false,
-)
