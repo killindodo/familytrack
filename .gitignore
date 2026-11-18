@@ -1,0 +1,22 @@
+# Gradle
+.gradle/
+build/
+**/build/
+
+# IDE
+.idea/
+*.iml
+local.properties
+
+# Android
+captures/
+*.apk.idsig
+
+# Secrets (never commit)
+google-services.json
+*.keystore
+!gradle/wrapper/gradle-wrapper.jar
+keystore.properties
+
+# OS
+.DS_Store
