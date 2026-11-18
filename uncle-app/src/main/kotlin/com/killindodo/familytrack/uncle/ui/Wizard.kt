@@ -149,7 +149,7 @@ fun Wizard(onFinished: () -> Unit) {
             body = "This app helps your family stay close to you. " +
                 "It only shares your location when they ask — never all the time.",
             allowLabel = "Get started",
-            onAllow = advance,
+            onAllow = ::advance,
         )
 
         Step.Name -> Column(
@@ -270,7 +270,7 @@ fun Wizard(onFinished: () -> Unit) {
                     ),
                 )
             },
-            onSkip = advance,
+            onSkip = ::advance,
         )
 
         Step.Background -> StepScreen(
@@ -288,7 +288,7 @@ fun Wizard(onFinished: () -> Unit) {
                     advance()
                 }
             },
-            onSkip = advance,
+            onSkip = ::advance,
         )
 
         Step.Notifications -> StepScreen(
@@ -303,7 +303,7 @@ fun Wizard(onFinished: () -> Unit) {
                     advance()
                 }
             },
-            onSkip = advance,
+            onSkip = ::advance,
         )
 
         Step.Battery -> Column(
@@ -345,7 +345,7 @@ fun Wizard(onFinished: () -> Unit) {
                 Spacer(Modifier.height(16.dp))
             }
             Button(
-                onClick = advance,
+                onClick = ::advance,
                 modifier = Modifier.fillMaxWidth().widthIn(max = 360.dp).height(56.dp),
             ) { Text("I did it", fontSize = 18.sp) }
         }
