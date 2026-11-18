@@ -50,7 +50,7 @@ object GeofenceBridge {
                 .build()
         }
         val request = GeofencingRequest.Builder()
-            .setInitialTriggerDisposition(GeofencingRequest.INITIAL_TRIGGER_DONT_FIRE)
+            .setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER)
             .addGeofences(fences)
             .build()
         val pi = PendingIntent.getBroadcast(
