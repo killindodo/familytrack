@@ -79,8 +79,8 @@ object SmsProtocol {
                 )
                 "NOFIX" -> FtMessage.NoFixMsg(parts[2].toLong(), FixReason.valueOf(parts[3]), parts[4].toInt(), parts[5].toLong())
                 "SOS" -> FtMessage.SosMsg(
-                    parts[3].toDoubleOrNull(), parts[4].toDoubleOrNull(), parts[5].toDoubleOrNull(),
-                    parts[6].toInt(), parts[7].toLong(),
+                    parts[2].toDoubleOrNull(), parts[3].toDoubleOrNull(), parts[4].toDoubleOrNull(),
+                    parts[5].toInt(), parts[6].toLong(),
                 )
                 "LOWBAT" -> FtMessage.LowBatMsg(parts[2].toInt(), parts[3].toLong())
                 "GEOF" -> FtMessage.GeofMsg(parts[2], parts[3].toDouble(), parts[4].toDouble(), parts[5].toDouble(), parts[6])
