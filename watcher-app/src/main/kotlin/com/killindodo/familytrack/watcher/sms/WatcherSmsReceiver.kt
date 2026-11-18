@@ -89,9 +89,11 @@ class WatcherSmsReceiver : BroadcastReceiver() {
 
             is FtMessage.SosMsg -> {
                 val uncle = dao.uncleByNumber(from) ?: return
-                if (m.lat != null && m.lng != null) {
+                val sosLat = m.lat
+                val sosLng = m.lng
+                if (sosLat != null && sosLng != null) {
                     storeFix(
-                        dao, uncle, m.lat, m.lng,
+                        dao, uncle, sosLat, sosLng,
                         m.accuracyM ?: -1.0, 0.0, m.batteryPct, FixSource.SOS,
                     )
                 }
